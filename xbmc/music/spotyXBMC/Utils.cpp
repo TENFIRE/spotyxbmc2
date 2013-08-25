@@ -83,7 +83,7 @@ namespace addon_music_spotify {
     const CFileItemPtr pItem(new CFileItem(path, outAlbum));
     if (album->hasThumb())
       pItem->SetArt("thumb",album->getThumb()->getPath());
-    pItem->SetProperty("fanart_image", *album->getFanart());
+    pItem->SetArt("fanart", *album->getFanart());
     return pItem;
   }
 
@@ -114,7 +114,7 @@ namespace addon_music_spotify {
     const CFileItemPtr pItem(new CFileItem(outSong));
     if (track->hasThumb())
       pItem->SetArt("thumb",track->getThumb()->getPath());
-    pItem->SetProperty("fanart_image", *track->getFanart());
+    pItem->SetArt("fanart", *track->getFanart());
     return pItem;
   }
 
@@ -139,7 +139,7 @@ namespace addon_music_spotify {
       pItem->SetArt("thumb",artist->getThumb()->getPath());
 
     pItem->SetIconImage("DefaultArtist.png");
-    pItem->SetProperty("fanart_image", *artist->getFanart());
+    pItem->SetArt("fanart", *artist->getFanart());
     pItem->SetProperty("artist_description", artist->getBio());
 
     return pItem;
